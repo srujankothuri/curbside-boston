@@ -1,0 +1,30 @@
+{
+  "name": "curbside-boston",
+  "version": "1.0.0",
+  "description": "Find free furniture on the curb before the trash truck does. CS 5610 Project 2.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --env-file=.env --watch server.js",
+    "start": "node server.js",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "engines": {
+    "node": ">=20.6"
+  },
+  "author": "Kothuri Venkata Srujan and Lakshmana Kontemukkula",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.3.0",
+    "mongodb": "^7.7.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.7",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10"
+  }
+}
