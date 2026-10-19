@@ -1,0 +1,256 @@
+/* Shared design tokens, reset, typography, buttons, and form controls.
+   Every page links this file first. */
+
+:root {
+  --color-page: #fbf6ee;
+  --color-card: #faeeda;
+  --color-border: #ead3a8;
+  --color-text: #412402;
+  --color-text-muted: #854f0b;
+  --color-primary: #993c1d;
+  --color-primary-dark: #7a2f16;
+  --color-highlight: #ef9f27;
+  --color-white: #ffffff;
+  --color-tape: #f3e3bf;
+
+  --color-fresh-bg: #eaf3de;
+  --color-fresh-text: #27500a;
+  --color-recent-bg: #ead3a8;
+  --color-recent-text: #633806;
+  --color-old-bg: #f1efe8;
+  --color-old-text: #5f5e5a;
+  --color-danger: #a32d2d;
+  --color-danger-bg: #fcebeb;
+
+  --font-heading: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --max-width: 1100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: var(--space-6) 0 var(--space-7);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-highlight);
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -3rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-control);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid transparent;
+  border-radius: var(--radius-control);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-outline {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-white);
+}
+
+.btn-secondary {
+  border-color: var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text-muted);
+}
+
+.btn-danger {
+  color: var(--color-danger);
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+}
+
+.btn-danger:hover {
+  text-decoration: underline;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* Form controls */
+
+label,
+legend {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--color-primary);
+}
+
+.field-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.field-error {
+  font-size: 0.85rem;
+  color: var(--color-danger);
+  font-weight: 600;
+  margin-top: var(--space-1);
+}
+
+[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

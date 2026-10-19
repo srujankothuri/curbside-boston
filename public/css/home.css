@@ -1,0 +1,150 @@
+/* Home page only. */
+
+.hero {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+  padding-bottom: var(--space-5);
+}
+
+.sign {
+  position: relative;
+  max-width: 38rem;
+  background: var(--color-card);
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  transform: rotate(-1.2deg);
+}
+
+.sign::before,
+.sign::after {
+  content: "";
+  position: absolute;
+  top: -0.75rem;
+  width: 5.5rem;
+  height: 1.6rem;
+  background: var(--color-tape);
+  border: 1px solid #e6cf9c;
+}
+
+.sign::before {
+  left: var(--space-5);
+  transform: rotate(-6deg);
+}
+
+.sign::after {
+  right: var(--space-5);
+  transform: rotate(5deg);
+}
+
+.sign h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sign p {
+  margin-top: var(--space-4);
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 46ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.hero-art {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+.home-section {
+  margin-top: var(--space-7);
+}
+
+.home-section h2 {
+  margin-bottom: var(--space-4);
+}
+
+.steps {
+  display: grid;
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.steps li {
+  counter-increment: step;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+}
+
+.steps li::before {
+  content: counter(step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: var(--space-3);
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.steps h3 {
+  margin-bottom: var(--space-1);
+}
+
+.steps p {
+  color: var(--color-text-muted);
+}
+
+.panel {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+}
+
+.panel p {
+  margin-bottom: var(--space-4);
+}
+
+.notes {
+  margin: 0;
+  padding-left: var(--space-5);
+}
+
+.notes li + li {
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .sign h1 {
+    font-size: 3.2rem;
+  }
+}
