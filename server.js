@@ -7,6 +7,11 @@ const app = express();
 
 app.use(express.json());
 app.use(express.static("public"));
+// On Vercel, "/" reaches Express instead of being served as a static file,
+// so send visitors to the Home page directly.
+app.get("/", (req, res) => {
+  res.redirect("/index.html");
+});
 app.use("/api", readAnonId);
 
 app.get("/api/health", async (req, res) => {
