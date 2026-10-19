@@ -1,0 +1,21 @@
+/* Post an item page only. Shared form layout lives in components.css. */
+
+#form-status:empty {
+  display: none;
+}
+
+.form-panel textarea {
+  min-height: 6rem;
+}
+
+.form-panel .radio-options {
+  margin-top: var(--space-1);
+}
+
+.form-panel[hidden] {
+  display: none;
+}
+
+.form-panel [aria-invalid="true"] {
+  border-color: var(--color-danger);
+}

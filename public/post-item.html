@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Post an item | Curbside Boston</title>
+    <meta
+      name="description"
+      content="Post a free item you left on the curb or spotted on your street."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/item-form.css" />
+    <script type="module" src="js/curb/itemForm.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header"></header>
+
+    <main id="main">
+      <div class="container form-page">
+        <div class="page-heading">
+          <div>
+            <h1 id="form-heading">Post an item</h1>
+            <p id="form-intro">
+              Takes less than a minute. Items show newest first.
+            </p>
+          </div>
+        </div>
+
+        <div id="form-status"></div>
+
+        <form id="item-form" class="form-panel" novalidate>
+          <fieldset>
+            <legend>Who's posting?</legend>
+            <div class="radio-options">
+              <label class="radio-option">
+                <input type="radio" name="postedBy" value="owner" checked />
+                I left this out
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="postedBy" value="spotter" />
+                I spotted this
+              </label>
+            </div>
+            <p id="postedBy-error" class="field-error" hidden></p>
+          </fieldset>
+
+          <div>
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              maxlength="60"
+              required
+              autocomplete="off"
+              placeholder="Wooden bookshelf, 5 shelves"
+              aria-describedby="title-hint title-error"
+            />
+            <p id="title-hint" class="field-hint">60 characters max</p>
+            <p id="title-error" class="field-error" hidden></p>
+          </div>
+
+          <div class="field-row">
+            <div>
+              <label for="category">Category</label>
+              <select
+                id="category"
+                name="category"
+                required
+                aria-describedby="category-error"
+              ></select>
+              <p id="category-error" class="field-error" hidden></p>
+            </div>
+            <div>
+              <label for="condition">Condition</label>
+              <select
+                id="condition"
+                name="condition"
+                required
+                aria-describedby="condition-error"
+              ></select>
+              <p id="condition-error" class="field-error" hidden></p>
+            </div>
+          </div>
+
+          <div>
+            <label for="neighborhood">Neighborhood</label>
+            <select
+              id="neighborhood"
+              name="neighborhood"
+              required
+              aria-describedby="neighborhood-error"
+            ></select>
+            <p id="neighborhood-error" class="field-error" hidden></p>
+          </div>
+
+          <div>
+            <label for="street">Street or cross street</label>
+            <input
+              type="text"
+              id="street"
+              name="street"
+              maxlength="80"
+              required
+              autocomplete="off"
+              placeholder="Tremont St near Huntington Ave"
+              aria-describedby="street-hint street-error"
+            />
+            <p id="street-hint" class="field-hint">No house numbers.</p>
+            <p id="street-error" class="field-error" hidden></p>
+          </div>
+
+          <div>
+            <label for="description">Description (optional)</label>
+            <textarea
+              id="description"
+              name="description"
+              maxlength="300"
+              placeholder="Heavy, needs two people."
+              aria-describedby="description-count description-error"
+            ></textarea>
+            <p id="description-count" class="field-hint char-count">0 / 300</p>
+            <p id="description-error" class="field-error" hidden></p>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="submit-button" class="btn btn-primary">
+              Post item
+            </button>
+            <a class="btn btn-secondary" href="curb-board.html">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+  </body>
+</html>

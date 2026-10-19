@@ -1,6 +1,7 @@
 import express from "express";
 import { getDb } from "./backend/db/connection.js";
 import { readAnonId } from "./backend/middleware/anonId.js";
+import curbItemsRouter from "./backend/routes/curbItems.js";
 
 const app = express();
 
@@ -17,6 +18,26 @@ app.get("/api/health", async (req, res) => {
     console.error("Health check failed:", error);
     res.status(500).json({ status: "error", database: "not connected" });
   }
+});
+
+app.use("/api/items", curbItemsRouter);
+
+// Unknown API routes get a JSON 404 instead of an HTML page
+app.use("/api", (req, res) => {
+  res.status(404).json({ error: "Not found." });
+});
+
+// Any error thrown in a route ends up here
+app.use((error, req, res, next) => {
+  if (res.headersSent) return next(error);
+  console.error(error);
+  const status = error.status >= 400 && error.status < 500 ? error.status : 500;
+  res.status(status).json({
+    error:
+      status === 500
+        ? "Something went wrong on our side. Try again."
+        : "That request couldn't be processed.",
+  });
 });
 
 const PORT = process.env.PORT || 3000;

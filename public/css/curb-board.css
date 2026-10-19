@@ -1,0 +1,24 @@
+/* Curb Board page only. Shared card, filter, and pagination styles
+   live in components.css. */
+
+.curb-filters .filters-actions {
+  padding-top: var(--space-1);
+}
+
+.card-location {
+  font-size: 0.95rem;
+}
+
+.card-location strong {
+  display: block;
+}
+
+.card-description {
+  font-size: 0.95rem;
+}
+
+@media (min-width: 1024px) {
+  .curb-filters {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
