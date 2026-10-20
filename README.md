@@ -3,6 +3,7 @@
 **Find free furniture on the curb before the trash truck does.**
 
 Live site: https://curbside-boston.vercel.app
+Youtube Video: https://www.youtube.com/watch?v=jzH2Zgjpl50
 
 ![Curb Board screenshot](docs/screenshot.png)
 
