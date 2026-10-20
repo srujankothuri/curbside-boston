@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wanted Board | Curbside Boston</title>
+    <meta
+      name="description"
+      content="See what people in Boston, Cambridge, and Brookline are looking for, and post a request of your own."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/wanted-board.css" />
+    <script type="module" src="js/wanted/board.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header"></header>
+
+    <main id="main">
+      <div class="container">
+        <div id="banner-area"></div>
+
+        <div class="page-heading">
+          <div>
+            <h1>Wanted Board</h1>
+            <p>
+              Things people are looking for. Leaving something out? See who
+              needs it.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="post-request.html">Post a request</a>
+        </div>
+
+        <details class="help">
+          <summary>How this board works</summary>
+          <ul>
+            <li>
+              Requests are newest first. Each one lists the neighborhoods the
+              person can pick up from, and how to reach them.
+            </li>
+            <li>
+              Have something a person needs? Contact them directly using the
+              details on their request.
+            </li>
+            <li>
+              Your own requests show Mark as found, Edit, and Delete. They're
+              tied to this browser instead of an account.
+            </li>
+            <li>
+              Filters apply right away and stay in the page address, so you can
+              share a filtered link.
+            </li>
+          </ul>
+        </details>
+
+        <form
+          id="filters"
+          class="filters wanted-filters"
+          aria-label="Filter requests"
+        >
+          <div>
+            <label for="filter-category">Category</label>
+            <select id="filter-category" name="category"></select>
+          </div>
+          <div>
+            <label for="filter-neighborhood">Neighborhood</label>
+            <select id="filter-neighborhood" name="neighborhood"></select>
+          </div>
+          <div class="filters-actions">
+            <label class="check" for="filter-found">
+              <input type="checkbox" id="filter-found" name="found" value="1" />
+              Show found requests
+            </label>
+            <button type="reset" class="btn btn-secondary">
+              Clear filters
+            </button>
+          </div>
+        </form>
+
+        <p id="results-count" class="results-count" role="status"></p>
+        <div id="results"></div>
+        <nav id="pagination" class="pagination" aria-label="Pages"></nav>
+
+        <p class="crosslink">
+          Looking to give something away?
+          <a href="curb-board.html">Browse the Curb Board</a>.
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+  </body>
+</html>
