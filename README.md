@@ -67,7 +67,7 @@ No React, Mongoose, template engines, or server-side rendering.
    npm run seed:wanted
    ```
 
-   The seed scripts only replace data they created, so real posts are never deleted. Seeded dates are spread over the two weeks before the script runs, so re-run them to refresh the "Fresh" labels.
+   The seed scripts only replace data they created, so real posts are never deleted. Seeded dates are spread over the past few weeks, relative to when the script runs, so re-run them to refresh the "Fresh" labels.
 
 4. Start the development server:
 
@@ -85,6 +85,7 @@ No React, Mongoose, template engines, or server-side rendering.
 
 **Deploying to Vercel:** import the repository, then add `MONGODB_URI` and `DB_NAME` as environment variables in the project settings.
 
+**Health check:** `/api/health` reports whether the server can reach the database, which is useful for checking a deployment.
 ## Project structure
 
 ```
