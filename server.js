@@ -2,6 +2,7 @@ import express from "express";
 import { getDb } from "./backend/db/connection.js";
 import { readAnonId } from "./backend/middleware/anonId.js";
 import curbItemsRouter from "./backend/routes/curbItems.js";
+import wantedRequestsRouter from "./backend/routes/wantedRequests.js";
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.get("/api/health", async (req, res) => {
 });
 
 app.use("/api/items", curbItemsRouter);
+app.use("/api/requests", wantedRequestsRouter);
 
 // Unknown API routes get a JSON 404 instead of an HTML page
 app.use("/api", (req, res) => {

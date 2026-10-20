@@ -6,6 +6,7 @@
   "main": "server.js",
   "scripts": {
     "seed:curb": "node --env-file=.env scripts/seedCurbItems.js",
+    "seed:wanted": "node --env-file=.env scripts/seedWantedRequests.js",
     "dev": "node --env-file=.env --watch server.js",
     "start": "node server.js",
     "lint": "eslint .",

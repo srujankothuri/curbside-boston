@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Post a request | Curbside Boston</title>
+    <meta
+      name="description"
+      content="Post a request for something you need, and where you can pick it up."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/request-form.css" />
+    <script type="module" src="js/wanted/requestForm.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header"></header>
+
+    <main id="main">
+      <div class="container form-page">
+        <div class="page-heading">
+          <div>
+            <h1 id="form-heading">Post a request</h1>
+            <p id="form-intro">
+              Tell people what you need and where you can pick it up.
+            </p>
+          </div>
+        </div>
+
+        <div id="form-status"></div>
+
+        <form id="request-form" class="form-panel" novalidate>
+          <div>
+            <label for="title">What do you need?</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              maxlength="60"
+              required
+              autocomplete="off"
+              placeholder="Bed frame, full or queen"
+              aria-describedby="title-hint title-error"
+            />
+            <p id="title-hint" class="field-hint">60 characters max</p>
+            <p id="title-error" class="field-error" hidden></p>
+          </div>
+
+          <div>
+            <label for="category">Category</label>
+            <select
+              id="category"
+              name="category"
+              required
+              aria-describedby="category-error"
+            ></select>
+            <p id="category-error" class="field-error" hidden></p>
+          </div>
+
+          <fieldset>
+            <legend>Where can you pick it up?</legend>
+            <div
+              id="neighborhood-options"
+              class="neighborhood-options"
+              aria-describedby="neighborhoods-error"
+            ></div>
+            <p id="neighborhoods-error" class="field-error" hidden></p>
+          </fieldset>
+
+          <div>
+            <label for="details">Details (optional)</label>
+            <textarea
+              id="details"
+              name="details"
+              maxlength="300"
+              placeholder="No car, so close to the T is best."
+              aria-describedby="details-count details-error"
+            ></textarea>
+            <p id="details-count" class="field-hint char-count">0 / 300</p>
+            <p id="details-error" class="field-error" hidden></p>
+          </div>
+
+          <div>
+            <label for="contact">How can people reach you?</label>
+            <input
+              type="text"
+              id="contact"
+              name="contact"
+              maxlength="100"
+              required
+              autocomplete="email"
+              placeholder="Email or phone"
+              aria-describedby="contact-hint contact-error"
+            />
+            <p id="contact-hint" class="field-hint">
+              This is shown publicly on your request.
+            </p>
+            <p id="contact-error" class="field-error" hidden></p>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="submit-button" class="btn btn-primary">
+              Post request
+            </button>
+            <a class="btn btn-secondary" href="wanted-board.html">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+  </body>
+</html>

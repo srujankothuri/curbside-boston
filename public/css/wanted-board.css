@@ -1,0 +1,23 @@
+/* Wanted Board page only. Shared card, filter, and pagination styles
+   live in components.css. */
+
+.request-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: var(--space-1);
+}
+
+.request-details,
+.request-contact {
+  font-size: 0.95rem;
+}
+
+.request-contact a {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 1024px) {
+  .wanted-filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
